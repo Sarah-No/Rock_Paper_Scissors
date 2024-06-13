@@ -50,14 +50,17 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  while (round < 5) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    console.log(round, " computer choice : ", computerChoice);
+    console.log(round, " human choice : ", humanChoice);
+    console.log(round, " human score : ", humanScore);
+    console.log(round, " computer score : ", computerScore);
+    round++;
+  }
+}
 
-playRound(humanSelection, computerSelection);
-
-console.log(round, " computer choice : ", computerChoice);
-console.log(round, " human choice : ", humanChoice);
-console.log(round, " human score : ", humanScore);
-console.log(round, " computer score : ", computerScore);
-
-function playRound() {}
+playGame();
